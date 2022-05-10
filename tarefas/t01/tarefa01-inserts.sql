@@ -44,9 +44,8 @@ CREATE TABLE atividade(
 	FOREIGN KEY (codProjeto) REFERENCES projeto(codigo) on delete set null on update cascade
 
 );
-(codigo, nome, descricao, cod_responsavel, data_inicio, data_fim)
-values (1, 'APF - Atividade 1', 1, '2022-04-16', '2022-05-26')
 
-CREATE TABLE atividade_projeto
-(cod_projeto, cod_atividade)
-values (1, 1)
+CREATE TABLE atividade_projeto(
+	cod_projeto int,
+	cod_atividade int
+);
