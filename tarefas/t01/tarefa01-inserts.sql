@@ -62,11 +62,11 @@ values ('APF', 'Atividade 1', 1, '2018-02-26', '2018-06-30');
 insert into atividade(nome, descricao, cod_responsavel, data_inicio, data_fim)
 values ('APF', 'Atividade 2', 1, '2018-06-26', '2018-07-30');
 insert into atividade(nome, descricao, cod_responsavel, data_inicio, data_fim)
-values ('APF - Atividade 3', 1, '2018-08-26', '2018-09-30');
+values ('APF', 'Atividade 3', 1, '2018-08-26', '2018-09-30');
 insert into atividade(nome, descricao, cod_responsavel, data_inicio, data_fim)
-values ('APF - Atividade 4', 1, '2018-08-26', '2018-09-30');
+values ('APF', 'Atividade 4', 1, '2018-08-26', '2018-09-30');
 insert into atividade(nome, descricao, cod_responsavel, data_inicio, data_fim)
-values ('APF - Atividade 5', 1, '2018-09-30', '2018-10-30');
+values ('APF', 'Atividade 5', 1, '2018-09-30', '2018-10-30');
 
 # Adicionando Atividade Projeto
 insert into atividade_projeto(cod_projeto, cod_atividade)
