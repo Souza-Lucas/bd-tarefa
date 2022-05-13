@@ -1,2 +1,2 @@
-SELECT f.nome, f.salario, d.descricao FROM funcionario f, departamento D
+SELECT f.nome, f.salario, d.descricao FROM funcionario f, departamento d
 WHERE f.cod_depto = d.codigo;
