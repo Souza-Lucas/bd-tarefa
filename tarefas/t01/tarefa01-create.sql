@@ -1,19 +1,51 @@
-insert into funcionario
-(codigo, nome, sexo, dt_nasc, salario, cod_depto)
-values (1, 'Mario', 'M', '1998-09-05', 2000.00, 1);
+CREATE TABLE funcionario(
+codigo int AUTO_INCREMENT,
+	nome varchar(50),
+	sexo char(1),
+	dtNasc date,
+	salario decimal(10,2),
+	codDepto int,
+	PRIMARY KEY (codigo),
+	FOREIGN KEY (codSupervisor) REFERENCES funcionario(codigo) on delete set null on update cascade
+);
 
-insert into departamento
-(codigo, descricao, cod_gerente)
-value (1, 'Dep Computação', null);
+CREATE TABLE departamento(
+  	codigo int AUTO_INCREMENT,
+	descricao varchar(50),
+	codGerente int,
+	PRIMARY KEY (codigo),
+	UNIQUE KEY depSigla (sigla),
+	FOREIGN KEY (codGerente) REFERENCES funcionario(codigo) on delete set null on update cascade
+);
 
-insert into projeto 
-(codigo, nome, descricao, cod_depto, cod_responsavel, data_inicio, data_fim)
-values (1, 'BD', 'Projeto de Banco de Dados', 1, 1, '2020-05-20', '2020-11-30');
 
-insert into atividade
-(codigo, nome, descricao, cod_responsavel, data_inicio, data_fim)
-values (1, 'APF - Atividade 1', 1, '2022-04-16', '2022-05-26')
+CREATE TABLE projeto(
+  	codigo int AUTO_INCREMENT,
+	nome varchar(50),
+	descricao varchar(250),
+	codResponsavel int,
+	codDepto int,
+	dataInicio date, 
+	dataFim date,
+	PRIMARY KEY (codigo),
+	UNIQUE KEY projNome (nome),
+	FOREIGN KEY (codResponsavel) REFERENCES funcionario(codigo) on delete set null on update cascade,
+	FOREIGN KEY (codDepto) REFERENCES departamento(codigo) on delete set null on update cascade
+);
 
-insert into atividade_projeto
-(cod_projeto, cod_atividade)
-values (1, 1)
+CREATE TABLE atividade(
+  	codigo int AUTO_INCREMENT,
+  	nome varchar(50),
+	descricao varchar(250),
+	codProjeto int,
+	dataInicio date, 
+	dataFim date,
+	PRIMARY KEY (codigo),
+	FOREIGN KEY (codProjeto) REFERENCES projeto(codigo) on delete set null on update cascade
+
+);
+
+CREATE TABLE atividade_projeto(
+	cod_projeto int,
+	cod_atividade int
+);
