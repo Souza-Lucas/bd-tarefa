@@ -1,90 +1,81 @@
-/*TABELA DEPARTAMENTO*/
+# Adicionando Funcionario
+insert into funcionario
+(nome, sexo, dtNasc, salario, codSupervisor, codDepto)
+values ('Maria', 'F', '1981-07-01', 2500.00, 1, 1);
 
-INSERT INTO Departamento
-(Descricao, Cod_Gerente)
-VALUES ('Departamento de Matematica', NULL);
+insert into funcionario
+(nome, sexo, dtNasc, salario, codSupervisor, codDepto)
+values ('Josefa', 'F', '1986-09-17', 2500.00, 1, 1);
 
-INSERT INTO Departamento
-(Descricao, Cod_Gerente)
-VALUES ('Departamento de Musica', NULL);
+insert into funcionario
+(nome, sexo, dtNasc, salario, codSupervisor, codDepto)
+values ('Carlos', 'M', '1985-11-21', 2500.00, 1, 1);
 
-INSERT INTO Departamento
-(Descricao, Cod_Gerente)
-VALUES ('Departamento de Sistemas', NULL);
+insert into funcionario
+(nome, sexo, dtNasc, salario, codSupervisor, codDepto)
+values ('Humberto', 'M', '1970-05-07', 1500.00, 2, 2);
 
-INSERT INTO Departamento
-(Descricao, Cod_Gerente)
-VALUES ('Departamento de informatica ', NULL);
+insert into funcionario
+(nome, sexo, dtNasc, salario, codSupervisor, codDepto)
+values ('José', 'M', '1979-07-12', 3500.00, 2, 2);
 
-INSERT INTO Departamento
-(Descricao, Cod_Gerente)
-VALUES (NULL, NULL);
+# Adicionando Departamento
+insert into departamento
+(sigla, descricao, codGerente)
+values ('DHC', 'Dep História', null);
 
-/*TABELA FUNCIONARIO*/
+insert into departamento
+(sigla, descricao, codGerente)
+values ('DCT', 'Dep Computação', null);
 
-INSERT INTO Funcionario
-(Nome, Sexo, Dat_Nasc, Salario, Cod_Dep)
-values ('Jeison', 'M', '2002-01-29', 5000.00, 1);
+insert into departamento
+(sigla, descricao, codGerente)
+values ('DGC', 'Dep Geografia', null);
 
-INSERT INTO Funcionario
-(Nome, Sexo, Dat_Nasc, Salario, Cod_Dep)
-VALUES ('Taciano', 'M', '1981-01-01', 2500.00, 5);
+insert into departamento
+(sigla, descricao, codGerente)
+values ('DMT', 'Dep Matemática', null);
 
-INSERT INTO Funcionario
-(Nome, Sexo, Dat_Nasc, Salario, Cod_Dep)
-VALUES ('Mario', 'M', '1999-07-15', 4000.00, 2);
+insert into departamento
+(sigla, descricao, codGerente)
+values ('DXT', null, null);
 
-INSERT INTO Funcionario
-(Nome, Sexo, Dat_Nasc, Salario, Cod_Dep)
-values ('Ronaldo', 'M', '1970-05-07', 1500.00, 3);
+# Adicionando Projeto
+insert into projeto(nome, descricao, codDepto, codResponsavel, dataInicio, dataFim)
+values ('APF', 'Analisador de Ponto de Função', 2, 2, '2018-02-26', '2019-06-30');
 
-INSERT INTO Funcionario
-(Nome, Sexo, Dat_Nasc, Salario, Cod_Dep)
-values ('Maria', 'F', '1979-07-13', 7000.00, 3);
+insert into projeto(nome, descricao, codDepto, codResponsavel, dataInicio, dataFim)
+values ('Monitoria', 'Projeto de Monitoria 2019.1', 1, 6, '2019-02-26', '2019-12-30');
 
-/* TABELA PROJETOS */
+insert into projeto(nome, descricao, codDepto, codResponsavel, dataInicio, dataFim)
+values ('BD', 'Projeto de Banco de Dados', 3, 5, '2018-02-26', '2018-06-30');
 
-INSERT INTO Projeto(Nome, Descricao, Cod_Depto, Cod_Responsavel, Data_Inicio, Data_Fim)
-values ('ALP', 'Projeto de Algoritimos', 1, 4, '2018-02-26', '2019-06-30');
+insert into projeto(nome, descricao, codDepto, codResponsavel, dataInicio, dataFim)
+values ('ES', 'Projeto de Engenharia de Software', 1, 1, '2018-02-26', '2018-06-30');
 
-INSERT INTO Projeto(Nome, Descricao, Cod_Depto, Cod_Responsavel, Data_Inicio, Data_Fim)
-values ('Monitoria', 'Projeto de Monitoria 2022', 1, 3, '2019-02-26', '2019-12-30');
+insert into projeto(nome, descricao, codDepto, codResponsavel, dataInicio, dataFim)
+values ('PW', 'Projeto de Progamação Web', 1, 1, '2019-02-21', '2019-06-25');
 
-INSERT INTO Projeto(Nome, Descricao, Cod_Depto, Cod_Responsavel, Data_Inicio, Data_Fim)
-values ('Banco de Dados', 'Projeto de Banco de Dados', 3, 4, '2018-02-26', '2018-06-30');
+# Adicionando Atividade
+insert into atividade(descricao, codProjeto, dataInicio, dataFim)
+values ('APF - Atividade 1', 1, '2018-02-26', '2018-06-30');
+insert into atividade(descricao, codProjeto, dataInicio, dataFim)
+values ('APF - Atividade 2', 1, '2018-06-26', '2018-07-30');
+insert into atividade(descricao, codProjeto, dataInicio, dataFim)
+values ('APF - Atividade 3', 1, '2018-08-26', '2018-09-30');
+insert into atividade(descricao, codProjeto, dataInicio, dataFim)
+values ('APF - Atividade 4', 1, '2018-08-26', '2018-09-30');
+insert into atividade(descricao, codProjeto, dataInicio, dataFim)
+values ('APF - Atividade 5', 1, '2018-09-30', '2018-10-30');
 
-INSERT INTO Projeto(Nome, Descricao, Cod_Depto, Cod_Responsavel, Data_Inicio, Data_Fim)
-values ('Egengaria', 'Projeto de Engenharia', 3, 1, '2018-02-26', '2018-06-30');
-
-INSERT INTO Projeto(Nome, Descricao, Cod_Depto, Cod_Responsavel, Data_Inicio, Data_Fim)
-values ('POO', 'Projeto de Programação', 1, 9, '2018-02-26', '2018-06-30');
-
-/* TABELA DE ATIVIDADES */
-
-INSERT INTO Atividade(Nome, Descricao, Cod_Responsavel, Data_Inicio, Data_Fim)
-values ('ATV','Atividade 1', 8, '2018-08-26', '2018-09-30');
-
-INSERT INTO Atividade(Nome, Descricao, Cod_Responsavel, Data_Inicio, Data_Fim)
-values ('ATV','Atividade 2', 3, '2018-08-26', '2018-09-30');
-
-INSERT INTO Atividade(Nome, Descricao, Cod_Responsavel, Data_Inicio, Data_Fim)
-values ('ATV','Atividade 5', 5, '2018-08-26', '2018-09-30');
-
-INSERT INTO Atividade(Nome, Descricao, Cod_Responsavel, Data_Inicio, Data_Fim)
-values ('ATV','Atividade 3', 9, '2018-08-26', '2018-09-30');
-
-INSERT INTO Atividade(Nome, Descricao, Cod_Responsavel, Data_Inicio, Data_Fim)
-values ('ATV','Atividade 4', 2, '2018-08-26', '2018-09-30');
-
-/* TABELA ATIVIDADE PROJETO*/
-
-INSERT INTO Atividade_Projeto(Codigo_Projeto, Codigo_Atividade)
-VALUES(1,4);
-INSERT INTO Atividade_Projeto(Codigo_Projeto, Codigo_Atividade)
-VALUES(2,8);
-INSERT INTO Atividade_Projeto(Codigo_Projeto, Codigo_Atividade)
-VALUES(3,9);
-INSERT INTO Atividade_Projeto(Codigo_Projeto, Codigo_Atividade)
-VALUES(4,4);
-INSERT INTO Atividade_Projeto(Codigo_Projeto, Codigo_Atividade)
-VALUES(5,10);
+# Adicionando Atividade Projeto
+insert into atividade_projeto(cod_projeto, cod_atividade)
+values (1, 1);
+insert into atividade_projeto(cod_projeto, cod_atividade)
+values (2, 2);
+insert into atividade_projeto(cod_projeto, cod_atividade)
+values (3, 3);
+insert into atividade_projeto(cod_projeto, cod_atividade)
+values (4, 4);
+insert into atividade_projeto(cod_projeto, cod_atividade)
+values (5, 5);
