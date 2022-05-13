@@ -1,5 +1,5 @@
 CREATE VIEW depto_projetos(gerente, descricao, projetos)
 as SELECT departamento.cod_gerente, departamento.descricao, count(projeto.cod_depto)
-FROM projeto p, departamento d WHERE p.cod_depto = d.codigo GROUP BY d.descricao, d.cod_gerente;
+FROM projeto, departamento WHERE projeto.cod_depto = departamento.codigo GROUP BY departamento.cod_gerente, departamento.descricao;
 
-SELECT f.nome, descricao, projeto FROM depto_projetos d LEFT JOIN funcionario f ON f.codigo = d.gerente;
+SELECT funcionario.nome, depto_projetos.descricao, depto_projetos.projetos FROM depto_projetos LEFT JOIN funcionario ON funcionario.codigo = depto_projetos.gerente;
