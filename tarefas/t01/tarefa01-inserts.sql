@@ -1,51 +1,90 @@
-CREATE TABLE funcionario(
-codigo int AUTO_INCREMENT,
-	nome varchar(50),
-	sexo char(1),
-	dtNasc date,
-	salario decimal(10,2),
-	codDepto int,
-	PRIMARY KEY (codigo),
-	FOREIGN KEY (codSupervisor) REFERENCES funcionario(codigo) on delete set null on update cascade
-);
+/*TABELA DEPARTAMENTO*/
 
-CREATE TABLE departamento(
-  	codigo int AUTO_INCREMENT,
-	descricao varchar(50),
-	codGerente int,
-	PRIMARY KEY (codigo),
-	UNIQUE KEY depSigla (sigla),
-	FOREIGN KEY (codGerente) REFERENCES funcionario(codigo) on delete set null on update cascade
-);
+INSERT INTO Departamento
+(Descricao, Cod_Gerente)
+VALUES ('Departamento de Matematica', NULL);
 
+INSERT INTO Departamento
+(Descricao, Cod_Gerente)
+VALUES ('Departamento de Musica', NULL);
 
-CREATE TABLE projeto(
-  	codigo int AUTO_INCREMENT,
-	nome varchar(50),
-	descricao varchar(250),
-	codResponsavel int,
-	codDepto int,
-	dataInicio date, 
-	dataFim date,
-	PRIMARY KEY (codigo),
-	UNIQUE KEY projNome (nome),
-	FOREIGN KEY (codResponsavel) REFERENCES funcionario(codigo) on delete set null on update cascade,
-	FOREIGN KEY (codDepto) REFERENCES departamento(codigo) on delete set null on update cascade
-);
+INSERT INTO Departamento
+(Descricao, Cod_Gerente)
+VALUES ('Departamento de Sistemas', NULL);
 
-CREATE TABLE atividade(
-  	codigo int AUTO_INCREMENT,
-  	nome varchar(50),
-	descricao varchar(250),
-	codProjeto int,
-	dataInicio date, 
-	dataFim date,
-	PRIMARY KEY (codigo),
-	FOREIGN KEY (codProjeto) REFERENCES projeto(codigo) on delete set null on update cascade
+INSERT INTO Departamento
+(Descricao, Cod_Gerente)
+VALUES ('Departamento de informatica ', NULL);
 
-);
+INSERT INTO Departamento
+(Descricao, Cod_Gerente)
+VALUES (NULL, NULL);
 
-CREATE TABLE atividade_projeto(
-	cod_projeto int,
-	cod_atividade int
-);
+/*TABELA FUNCIONARIO*/
+
+INSERT INTO Funcionario
+(Nome, Sexo, Dat_Nasc, Salario, Cod_Dep)
+values ('Jeison', 'M', '2002-01-29', 5000.00, 1);
+
+INSERT INTO Funcionario
+(Nome, Sexo, Dat_Nasc, Salario, Cod_Dep)
+VALUES ('Taciano', 'M', '1981-01-01', 2500.00, 5);
+
+INSERT INTO Funcionario
+(Nome, Sexo, Dat_Nasc, Salario, Cod_Dep)
+VALUES ('Mario', 'M', '1999-07-15', 4000.00, 2);
+
+INSERT INTO Funcionario
+(Nome, Sexo, Dat_Nasc, Salario, Cod_Dep)
+values ('Ronaldo', 'M', '1970-05-07', 1500.00, 3);
+
+INSERT INTO Funcionario
+(Nome, Sexo, Dat_Nasc, Salario, Cod_Dep)
+values ('Maria', 'F', '1979-07-13', 7000.00, 3);
+
+/* TABELA PROJETOS */
+
+INSERT INTO Projeto(Nome, Descricao, Cod_Depto, Cod_Responsavel, Data_Inicio, Data_Fim)
+values ('ALP', 'Projeto de Algoritimos', 1, 4, '2018-02-26', '2019-06-30');
+
+INSERT INTO Projeto(Nome, Descricao, Cod_Depto, Cod_Responsavel, Data_Inicio, Data_Fim)
+values ('Monitoria', 'Projeto de Monitoria 2022', 1, 3, '2019-02-26', '2019-12-30');
+
+INSERT INTO Projeto(Nome, Descricao, Cod_Depto, Cod_Responsavel, Data_Inicio, Data_Fim)
+values ('Banco de Dados', 'Projeto de Banco de Dados', 3, 4, '2018-02-26', '2018-06-30');
+
+INSERT INTO Projeto(Nome, Descricao, Cod_Depto, Cod_Responsavel, Data_Inicio, Data_Fim)
+values ('Egengaria', 'Projeto de Engenharia', 3, 1, '2018-02-26', '2018-06-30');
+
+INSERT INTO Projeto(Nome, Descricao, Cod_Depto, Cod_Responsavel, Data_Inicio, Data_Fim)
+values ('POO', 'Projeto de Programação', 1, 9, '2018-02-26', '2018-06-30');
+
+/* TABELA DE ATIVIDADES */
+
+INSERT INTO Atividade(Nome, Descricao, Cod_Responsavel, Data_Inicio, Data_Fim)
+values ('ATV','Atividade 1', 8, '2018-08-26', '2018-09-30');
+
+INSERT INTO Atividade(Nome, Descricao, Cod_Responsavel, Data_Inicio, Data_Fim)
+values ('ATV','Atividade 2', 3, '2018-08-26', '2018-09-30');
+
+INSERT INTO Atividade(Nome, Descricao, Cod_Responsavel, Data_Inicio, Data_Fim)
+values ('ATV','Atividade 5', 5, '2018-08-26', '2018-09-30');
+
+INSERT INTO Atividade(Nome, Descricao, Cod_Responsavel, Data_Inicio, Data_Fim)
+values ('ATV','Atividade 3', 9, '2018-08-26', '2018-09-30');
+
+INSERT INTO Atividade(Nome, Descricao, Cod_Responsavel, Data_Inicio, Data_Fim)
+values ('ATV','Atividade 4', 2, '2018-08-26', '2018-09-30');
+
+/* TABELA ATIVIDADE PROJETO*/
+
+INSERT INTO Atividade_Projeto(Codigo_Projeto, Codigo_Atividade)
+VALUES(1,4);
+INSERT INTO Atividade_Projeto(Codigo_Projeto, Codigo_Atividade)
+VALUES(2,8);
+INSERT INTO Atividade_Projeto(Codigo_Projeto, Codigo_Atividade)
+VALUES(3,9);
+INSERT INTO Atividade_Projeto(Codigo_Projeto, Codigo_Atividade)
+VALUES(4,4);
+INSERT INTO Atividade_Projeto(Codigo_Projeto, Codigo_Atividade)
+VALUES(5,10);
