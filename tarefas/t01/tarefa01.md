@@ -2,4 +2,4 @@
 
 * Scripts de Povoamento: https://github.com/Souza-Lucas/bd-tarefa/blob/main/tarefas/t01/tarefa01-inserts.sql
 
-* Scripts de Consulta: 
+* Scripts de Consulta: https://github.com/Souza-Lucas/bd-tarefa/tree/main/tarefas/t01
