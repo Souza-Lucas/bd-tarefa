@@ -9,6 +9,7 @@ Peewee é um ORM destinado a criar e gerenciar tabelas de banco de dados relacio
 
 <h2>Scripts e Questões</h2>
 <h3>ODBC</h3>
+
 <a href="https://github.com/Souza-Lucas/bd-tarefa/blob/main/tarefas/t03/obdc/connect.py">Conexão ODBC</a>
 
 <a href="https://github.com/Souza-Lucas/bd-tarefa/blob/main/tarefas/t03/obdc/insert.py">Questão 5 - A</a>
@@ -18,6 +19,7 @@ Peewee é um ORM destinado a criar e gerenciar tabelas de banco de dados relacio
 <a href="https://github.com/Souza-Lucas/bd-tarefa/blob/main/tarefas/t03/obdc/select.py">Questão 5 - C</a>
 
 <h3>ORM</h3>
+
 <a href="https://github.com/Souza-Lucas/bd-tarefa/blob/main/tarefas/t03/orm/models.py">Models</a>
 
 <a href="https://github.com/Souza-Lucas/bd-tarefa/blob/main/tarefas/t03/orm/connect.py">Conexão ORM</a>
